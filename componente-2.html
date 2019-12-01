@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Componente dos polymer</title>
+    <base href="https://cdn.rawgit.com/download/polymer-cdn/2.6.0/lib/">    
+    <script src="webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="iron-ajax/iron-ajax.html">
+    <link rel="import" href="polymer/polymer-element.html">
+
+</head>
+<body>
+        <desarmador-componentes><desarmador-componentes>     
+                <dom-module id="desarmador-componentes">
+                    <template>
+                      <style> </style>
+                      <h1>Herramienta</h1>
+
+                        <p> Nombre: {{product}}</p>
+          
+                        <p> Modelo: {{model}}</p>
+          
+                         <p> Tipo: {{type}}</p>
+                    </template>
+                     <script>
+                      class desarmadorComponentes extends Polymer.Element {
+                        static get is() { return "desarmador-componentes"; }
+                        static get properties() {
+                          return {
+                            product: {
+                                type: String,
+                                value:'Desarmador'
+                            },
+                            model:{
+                                type: String,
+                                value: 'Hltcs-2398'
+                            },
+                            type:{
+                                type: Array,
+                                value:['Cruz','Plano','Torx','Allen']
+                            }                           
+                          }
+                        }
+                      }
+                      customElements.define(desarmadorComponentes.is, desarmadorComponentes);
+                    </script>
+                </dom-module>
+            
+    
+</body>
+</html>

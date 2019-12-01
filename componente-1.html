@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Componente uno polymer</title>
+    <base href="https://cdn.rawgit.com/download/polymer-cdn/2.6.0/lib/">    
+    <script src="webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="iron-ajax/iron-ajax.html">
+    <link rel="import" href="polymer/polymer-element.html">
+
+</head>
+<body>
+        <laptops-componentes><laptops-componentes>     
+                <dom-module id="laptops-componentes">
+                    <template>
+                      <style> </style>
+                      <h1>Laptops info</h1>
+
+                        <p> Nombre: {{name}}</p>
+          
+                        <p> Modelo: {{model}}</p>
+          
+                         <p> Especificaciones: {{specifications.memory}}</p>
+
+                        <p> Color: {{color}} </p>
+
+                    </template>
+                     <script>
+                      class laptopsComponentes extends Polymer.Element {
+                        static get is() { return "laptops-componentes"; }
+                        static get properties() {
+                          return {
+                            name: {
+                              type: String,
+                              value:'MacBook'
+                            },
+                            model:{
+                              type: Number,
+                              value: 2019
+                            },
+                        
+                            specifications:{
+                              type: Object,
+                              value:{memory: '16Gb', processor: 'IntelcoreI7', SSD:'No',
+                                    }
+                            },
+                            color:{
+                              type:String,
+                              value: 'Space Gray'
+                            }
+                           
+                          }
+                        }
+                      }
+                      customElements.define(laptopsComponentes.is, laptopsComponentes);
+                    </script>
+                </dom-module>
+            
+    
+</body>
+</html>

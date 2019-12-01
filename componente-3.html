@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Componente tres polymer</title>
+    <base href="https://cdn.rawgit.com/download/polymer-cdn/2.6.0/lib/">    
+    <script src="webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="iron-ajax/iron-ajax.html">
+    <link rel="import" href="polymer/polymer-element.html">
+
+</head>
+<body>
+        <silla-componentes><silla-componentes>     
+                <dom-module id="silla-componentes">
+                    <template>
+                      <style> </style>
+                      <h1>Sillas</h1>
+
+                        <p> Nombre: {{name}}</p>
+          
+                        <p> Modelo: {{model}}</p>
+          
+                         <p> Especificaciones: {{specifications}}</p>
+
+                    </template>
+                     <script>
+                      class sillaComponentes extends Polymer.Element {
+                        static get is() { return "silla-componentes"; }
+                        static get properties() {
+                          return {
+                            name: {
+                              type: String,
+                              value:'Eleganza'
+                            },
+                            model:{
+                              type: Number,
+                              value: 2017
+                            },
+                            specifications:{
+                                type: Array,
+                                value:['Reclinable ',' Ruedas ',' Descanza brazos ',' Soporte lumbar']
+                            }                            
+                          }
+                        }
+                      }
+                      customElements.define(sillaComponentes.is, sillaComponentes);
+                    </script>
+                </dom-module>
+            
+    
+</body>
+</html>
