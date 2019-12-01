@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Componente cuatro polymer</title>
+    <base href="https://cdn.rawgit.com/download/polymer-cdn/2.6.0/lib/">    
+    <script src="webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="iron-ajax/iron-ajax.html">
+    <link rel="import" href="polymer/polymer-element.html">
+
+</head>
+<body>
+        <consola-componentes><consola-componentes>     
+                <dom-module id="consola-componentes">
+                    <template>
+                      <style> </style>
+                      <h1>Consola de videojuego</h1>
+
+                        <p> Nombre: {{name}}</p>
+          
+                        <p> Modelo: {{model}}</p>
+          
+                         <p> Juegos: [[games]]</p>
+
+                    </template>
+                     <script>
+                      class consolaComponentes extends Polymer.Element {
+                        static get is() { return "consola-componentes"; }
+                        static get properties() {
+                          return {
+                            name: {
+                              type: String,
+                              value:'Nintendo Swich'
+                            },
+                            model:{
+                              type: String,
+                              value: 'Orange Blue'
+                            },
+                            games:{
+                                type: Array,
+                                value:['Super Mario World ',' CTR ',' Mario Kart ']
+                            }                            
+                          }
+                        }
+                      }
+                      customElements.define(consolaComponentes.is, consolaComponentes);
+                    </script>
+                </dom-module>
+            
+    
+</body>
+</html>

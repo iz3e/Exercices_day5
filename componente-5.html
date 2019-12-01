@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Componente cinco polymer</title>
+    <base href="https://cdn.rawgit.com/download/polymer-cdn/2.6.0/lib/">    
+    <script src="webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="iron-ajax/iron-ajax.html">
+    <link rel="import" href="polymer/polymer-element.html">
+
+</head>
+<body>
+        <got-componentes><got-componentes>     
+                <dom-module id="got-componentes">
+                    <template>
+                      <style> </style>
+                      <h1>Personaje favorito</h1>
+
+                        <p> Nombre: {{name}}</p>
+          
+                        <p> Alias: [[alias]]</p>
+                        
+                        <p> Sexo: [[sex]]</p>
+                        
+                        <p> Nacimiento: {{nac}}</p>
+                    </template>
+                     <script>
+                      class gotComponentes extends Polymer.Element {
+                        static get is() { return "got-componentes"; }
+                        static get properties() {
+                          return {
+                            name: {
+                              type: String,
+                              value:'Daenerys Targaryen'
+                            },
+                            alias:{
+                                type: Array,
+                                value:['Dany','Daenerys de la Tormenta','Mhysa','Khaleesi',
+                                        'Madre de Dragones','Reina Dragón','La que no arde','Rompedora de cadenas',
+                                        'Reina de las cenizas','Reina de los 7 reinos']
+                            },
+                            sex:{
+                              type: String,
+                              value: 'Femenino'
+                            },
+                            nac:{
+                              type: String,
+                              value: '284 DC'
+                            }                        
+                          }
+                        }
+                      }
+                      customElements.define(gotComponentes.is, gotComponentes);
+                    </script>
+                </dom-module>
+            
+    
+</body>
+</html>
